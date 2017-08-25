@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Subash Chatbox</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: tahoma, sans-serif;
+			box-sizing: border-box;
+		}
+		body{
+			background: #fff;
+		}
+		.chatbox{
+			width: 500px;
+			min-width: 390px;
+			height: 600px;
+			background: #ddddd6;
+			padding: 15px;
+			
+			box-shadow: 2px 3px #b0addb;
+			border-radius: 10px;
+			position: relative;
+			margin-top: 50px;
+		}
+
+		.chatlogs{
+			padding: 10px;
+			padding-right: 0px;
+			width: 100%;
+			height: 450px;
+			background: #fbfbfb;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		.chatlogs::-webkit-scrollbar{
+			width: 10px;
+		}
+		.chatlogs::-webkit-scrollbar-thumb{
+			border-radius: 5px;
+			background: rgba(0,0,0,0.2);
+		}
+
+
+
+		.chat{
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-start;
+			margin-bottom: 3px;
+
+		}
+		.chat .user-photo{
+			width: 50px;
+			height: 50px;
+			background: #d6cdcf;
+			border-radius: 50%;
+			overflow: hidden;
+
+		}
+		.chat .user-photo img{
+			width: 100%;
+		}
+
+
+		.chat .chat-message{
+			width: 80%;
+			padding: 15px;
+			margin: 5px 10px 0;			
+			border-radius: 10px;
+			color: #fff;
+			font-size: 15px;
+		}
+
+		.friend .chat-message{
+			background: #F8BA06;
+		}
+		.self .chat-message{
+			background: #5E5E5E;
+			order: -1;
+		}
+		.chat-form{
+			margin-top: 20px;
+			display: flex;
+			align-items: flex-start;
+		}
+		.chat-form textarea{
+			background: #f9fbfc;
+			width: 85%;
+			height: 50px;
+			border: 2px solid #efe;
+			border-radius: 3px;
+			resize: none;
+			padding: 10px;
+			font-size: 16px;
+			color: #333;
+		}
+
+		.chat-form textarea:focus{
+			background: #fff;
+		}
+		
+		.chat-form textarea::-webkit-scrollbar{
+			width: 8px;
+		}
+		.chat-form textarea::-webkit-scrollbar-thumb{
+			border-radius: 3px;
+			background: rgba(0,0,0,0.3);
+		}
+
+		
+
+		.category{
+			width: 300px;
+
+		}
+
+		.active{
+			background: #F8BA06 !important;
+			border: 1px solid #5E5E5E !important;
+		}
+		#phone, #attach, #mail, #emoji{
+			padding: 20px;
+			padding-top: 10px;
+		}
+		#send{
+			padding-left: 10px;
+		}
+		#send:hover{
+			color: #F8BA06;
+		}
+		#details{
+			width: 330px;
+			padding-left: 50px;
+			margin-top: 100px;
+			font-style: Georgia, serif;
+			font-size: 17px;
+		}
+		#pic{
+			height: 150px;
+			padding-left: 70px;
+			border-radius: 5px;
+		}
+		#online{
+			height: 10px;
+			margin-top: 140px;
+		}
+
+	</style>
+</head>
+<body>
+	
+
+	<div class="container">
+
+		<div class="row">
+			
+				<div class="category col-md-4 col-sm-12">
+					<h2>Friends :</h2>
+					<div id="list-example" class="list-group">
+					  <a class="list-group-item list-group-item-action active" id="category-1" href="#category-1">Friend  1</a>
+					  <a class="list-group-item list-group-item-action" id="category-2" href="#category-2">Friend  2</a>
+					  <a class="list-group-item list-group-item-action" id="category-3" href="#category-3">Friend  3</a>
+					  <a class="list-group-item list-group-item-action" id="category-4" href="#category-4">Friend  4</a>
+					</div>
+				</div>
+				<div class="chatbox col-md-4 col-sm-12">
+				
+		<div class="chatlogs">
+
+			<div class="chat friend">
+				<div class="user-photo"><img src="https://vignette2.wikia.nocookie.net/disney/images/3/3e/Robert-downey-jr-2011.jpg/revision/latest?cb=20110926005055"></div>
+				<p class="chat-message">HI!!! I am your friend <span id="span1">  <b>1</b> </span></p>
+			</div>
+			<div class="chat self">
+				<div class="user-photo"><img src="http://c8.alamy.com/comp/EFABWJ/chris-evans-captain-america-the-first-avenger-2011-EFABWJ.jpg"></div>
+				<p class="chat-message">Hi!!! How are you?</p>
+			</div>
+			<div class="chat friend">
+				<div class="user-photo"><img src="https://vignette2.wikia.nocookie.net/disney/images/3/3e/Robert-downey-jr-2011.jpg/revision/latest?cb=20110926005055"></div>
+				<p class="chat-message">I am fine. What about you. And how is your family?</p>
+			</div>
+			
+			<div class="chat friend">
+				<div class="user-photo"><img src="https://vignette2.wikia.nocookie.net/disney/images/3/3e/Robert-downey-jr-2011.jpg/revision/latest?cb=20110926005055"></div>
+				<p class="chat-message">I'm fine dude... And my family is also fine... Was glad to hear about your promotion. Congtatulations!</p>
+			</div>
+			<div class="chat self">
+				<div class="user-photo"><img src="http://c8.alamy.com/comp/EFABWJ/chris-evans-captain-america-the-first-avenger-2011-EFABWJ.jpg"></div>
+				<p class="chat-message">Thanks mate. :)</p>
+			</div>
+			<div class="chat friend">
+				<div class="user-photo"><img src="https://vignette2.wikia.nocookie.net/disney/images/3/3e/Robert-downey-jr-2011.jpg/revision/latest?cb=20110926005055"></div>
+				<p class="chat-message">You are welcome.</p>
+			</div>
+			<div class="chat self">
+				<div class="user-photo"><img src="http://c8.alamy.com/comp/EFABWJ/chris-evans-captain-america-the-first-avenger-2011-EFABWJ.jpg"></div>
+				<p class="chat-message">Ok.. bye.. talk to you later.</p>
+			</div>
+
+
+		</div>
+				<div class="chat-form">
+			<textarea></textarea>
+			<i class="fa fa-chevron-circle-right fa-4x" id="send" aria-hidden="true"></i>
+
+
+			</div>
+				<a><i class="fa fa-phone fa-3x" id="phone" aria-hidden="true"></i></a>
+				<a><i class="fa fa-envelope-o fa-3x" id="mail" aria-hidden="true"></i></a>
+				<a><i class="fa fa-paperclip fa-3x" id="attach" aria-hidden="true"></i></a>
+				<a><i class="fa fa-smile-o fa-3x" id="emoji" aria-hidden="true"></i></a>
+			</div>
+		<div class="col-md-4 col-sm-12" id="details">
+			<img src="https://vignette2.wikia.nocookie.net/disney/images/3/3e/Robert-downey-jr-2011.jpg/revision/latest?cb=20110926005055" id="pic">
+			<img src="http://www.clker.com/cliparts/4/t/n/Q/b/d/green-glossy-icon-hi.png" id="online">
+			<p>Name of Friend: Friend <span id="span"> <b>1</b> </span></p>
+
+		</div>
+
+	</div>
+	
+	
+	</div>
+
+
+	<script type="text/javascript">
+		var b1=document.getElementById("category-1");
+		var b2=document.getElementById("category-2");
+		var b3=document.getElementById("category-3");
+		var b4=document.getElementById("category-4");
+		var span=document.getElementById("span");
+		var span1=document.getElementById("span1");
+
+
+		b1.addEventListener("click",function(){
+			b1.classList.add("active");
+			b2.classList.remove("active");
+			b3.classList.remove("active");
+			b4.classList.remove("active");
+			span.innerHTML="<b>1<b>";
+			span1.innerHTML="<b>1<b>";
+		});
+		b2.addEventListener("click",function(){
+			b1.classList.remove("active");
+			b2.classList.add("active");
+			b3.classList.remove("active");
+			b4.classList.remove("active");
+			span.innerHTML="<b>2<b>";
+			span1.innerHTML="<b>2<b>";
+		});
+		b3.addEventListener("click" ,function(){
+			b1.classList.remove("active");
+			b2.classList.remove("active");
+			b3.classList.add("active");
+			b4.classList.remove("active");
+			span.innerHTML="<b>3<b>";
+			span1.innerHTML="<b>3<b>";
+		});
+		b4.addEventListener("click",function(){
+			b1.classList.remove("active");
+			b2.classList.remove("active");
+			b3.classList.remove("active");
+			b4.classList.add("active");
+			span.innerHTML="<b>4<b>";
+			span1.innerHTML="<b>4<b>";
+		});
+	</script>
+	<script src="https://use.fontawesome.com/b8ca35c8ba.js"></script>
+</body>
+</html>
